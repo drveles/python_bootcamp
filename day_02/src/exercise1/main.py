@@ -13,13 +13,13 @@ class PictureSaver:
 
     def check_save_directory(self) -> bool:
         try:
-            inputed_path = input()
+            inputed_path = input("Директория для сохранения файлов:")
             abs_path = os.path.abspath(inputed_path)
             if not os.access(abs_path, os.W_OK):
                 raise Exception
             self.save_directory = abs_path
         except Exception:
-            print("Пожалуйста, выбери другой путь для сохранения файлов:")
+            print("Пожалуйста, выбери другую директорию.")
             self.check_save_directory()
 
 
